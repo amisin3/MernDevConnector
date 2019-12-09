@@ -11,6 +11,12 @@ const gravatar = require('gravatar');
 // For encrypting password
 const bcrypt = require('bcryptjs');
 
+// jsonwebtoken
+const jwt = require('jsonwebtoken');
+
+// importing config
+const config = require("config");
+
 // @route   POST api/users
 // @desc    Register route
 // @access  Public
@@ -59,8 +65,20 @@ router.post('/', [
   await user.save();
 
   // Return jsonwebtoken
+  const payload = {
+    user: {
+      id: user.id
+    }
+  }
+  jwt.sign(payload,
+  config.get("jwtSecret"),
+  { expiresIn: 360000 },
+   (err, token) =>{
+      if(err) throw err;
+      res.json({ token });
+   });
 
-  res.send('User registered');
+
 }catch(err){
   console.error(err.message);
   res.status(500).send("Server error");
