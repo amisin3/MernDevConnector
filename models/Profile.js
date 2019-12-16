@@ -91,13 +91,13 @@ const ProfileSchema  = new mongoose.Schema({
     youtube: {
       type: String
     },
-    twiter: {
+    twitter: {
       type: String
     },
     facebook: {
       type: String
     },
-    linkdin: {
+    linkedin: {
       type: String
     },
     instagram: {
