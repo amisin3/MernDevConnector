@@ -5,11 +5,16 @@ import Landing from './component/layout/Landing';
 import Register from './component/auth/Register';
 import Login from './component/auth/Login';
 
+// Redux
+import { Provider } from 'react-redux';
+import store from './store';
+
 // For Routing Purpose
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 const App = () => (
+  <Provider store={store}>
   <Router>
       <Fragment>
         <Navbar />
@@ -22,6 +27,7 @@ const App = () => (
         </section>
       </Fragment>
   </Router>
+  </Provider>
 );
 
 
