@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://amit123:amit123@cluster0-rydwv.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "de68b5cb3b927dde6ab9",
+  "githubSecret": "57305ae5c667bd7bc2265f9dcfac772e25501c27"
+}
